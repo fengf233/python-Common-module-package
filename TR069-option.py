@@ -21,8 +21,8 @@ def option_43(url,username,passwd):
     return option43
 
 def option_125(url,username,passwd,idenfiy):
-    option125 = 'option vendor-specific-information '+'00:00:0d:e9:'+int2hex(len(url)+len(username)+len(passwd)+len(idenfiy)+14)+ \
-        ":0b:"+int2hex(len(url))+str2hex(url)+":0c:1a:01:"+int2hex(len(username))+str2hex(username)+":02:"+int2hex(len(passwd))+\
+    option125 = 'option vendor-specific-information '+'00:00:0d:e9:'+int2hex(len(url)+len(username)+len(passwd)+len(idenfiy)+14+5)+ \
+        ":0b:"+int2hex(len(url))+str2hex(url)+":0c:"+int2hex(len(username)+len(passwd)+4)+":01:"+int2hex(len(username))+str2hex(username)+":02:"+int2hex(len(passwd))+str2hex(passwd)+\
             ":0D:01:36:0E:04:33:30:30:30:EA:"+int2hex(len(idenfiy))+str2hex(idenfiy)+';'
     return option125
 
